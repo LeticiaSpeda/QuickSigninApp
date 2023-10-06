@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E038FEC92AD05A9B004036F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E038FEC82AD05A9B004036F2 /* HomeViewController.swift */; };
 		E0E015B52889DB30008AE19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E015B42889DB30008AE19E /* AppDelegate.swift */; };
 		E0E015B72889DB30008AE19E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E015B62889DB30008AE19E /* SceneDelegate.swift */; };
 		E0E015C12889DB31008AE19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E015BF2889DB31008AE19E /* LaunchScreen.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		E038FEC52ACF4E7E004036F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E038FEC82AD05A9B004036F2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E0E015B12889DB30008AE19E /* AppBackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E015B42889DB30008AE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E015B62889DB30008AE19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				E038FEC62AD04A13004036F2 /* View */,
 				E0E015CA2889DDB2008AE19E /* LoginViewController.swift */,
+				E038FEC82AD05A9B004036F2 /* HomeViewController.swift */,
 				E0E015C22889DB31008AE19E /* Info.plist */,
 				E0E015D0288A1C3B008AE19E /* Extension */,
 			);
@@ -178,6 +181,7 @@
 				E0E015CB2889DDB2008AE19E /* LoginViewController.swift in Sources */,
 				E0E015CD2889DFBB008AE19E /* LoginScreen.swift in Sources */,
 				E0E015B52889DB30008AE19E /* AppDelegate.swift in Sources */,
+				E038FEC92AD05A9B004036F2 /* HomeViewController.swift in Sources */,
 				E0E015B72889DB30008AE19E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

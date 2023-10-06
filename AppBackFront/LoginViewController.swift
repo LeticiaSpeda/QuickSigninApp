@@ -17,14 +17,15 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginScreenProtocol {
     func tappedLoginButton() {
-        //
+        let controller = HomeViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(#function)
+        //
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -32,10 +33,10 @@ extension LoginViewController: UITextFieldDelegate {
         let password = loginScreen?.passwordTextField.text ?? ""
         
         if email.isEmpty && password.isEmpty {
-            loginScreen?.sendButton.isEnabled = true
+            loginScreen?.sendButton.isEnabled = false
             loginScreen?.sendButton.backgroundColor = .gray
         } else {
-            loginScreen?.sendButton.isEnabled = false
+            loginScreen?.sendButton.isEnabled = true
             loginScreen?.sendButton.backgroundColor = UIColor(red: 242.0/255.0, green: 19.0/255.0, blue: 123.0/255.0, alpha: 0.50)
         }
     }

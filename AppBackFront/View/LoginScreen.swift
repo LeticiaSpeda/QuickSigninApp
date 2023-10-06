@@ -126,6 +126,7 @@ final class LoginScreen: UIView {
         button.backgroundColor = .gray
         button.layer.borderWidth = 1.0
         button.isEnabled = false
+        button.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
         button.layer.borderColor = UIColor.white.cgColor
         return button
     }()
@@ -173,6 +174,7 @@ final class LoginScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        backgroundColor = #colorLiteral(red: 0.5710227273, green: 0.06407853923, blue: 0.4594097599, alpha: 0.98)
     }
     
     required init?(coder: NSCoder) {
@@ -200,7 +202,7 @@ final class LoginScreen: UIView {
     }
     
     private func actionsButton() {
-        sendButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
+//        sendButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
     }
     
     private func configureHierarchy() {

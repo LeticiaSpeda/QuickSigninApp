@@ -1,13 +1,11 @@
-//
-//  LoginScreen.swift
-//  AppBackFront
-//
-//  Created by Leticia Speda on 21/07/22.
-//
-
 import UIKit
 
+protocol LoginScreenProtocol: AnyObject {
+    func tappedLoginButton()
+}
+
 final class LoginScreen: UIView {
+    private weak var delegate: LoginScreenProtocol?
     
     //MARK: - Componets
     private lazy var subImageView: UIImageView = {
@@ -119,7 +117,7 @@ final class LoginScreen: UIView {
     
     private lazy var sendButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Enviar", for: .normal)
+        button.setTitle("Logar", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 10
@@ -183,8 +181,26 @@ final class LoginScreen: UIView {
     
     //MARK: - Helpers
     private func commonInit() {
+        actionsButton()
         configureHierarchy()
         configureConstrainsts()
+    }
+    
+    @objc func tappedLoginButton() {
+        delegate?.tappedLoginButton()
+    }
+    
+    func delegate(_ delegate: LoginScreenProtocol?) {
+        self.delegate = delegate
+    }
+    
+    func configTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        loginTextField.delegate = delegate
+        passwordTextField.delegate = delegate
+    }
+    
+    private func actionsButton() {
+        sendButton.addTarget(self, action: #selector(tappedLoginButton), for: .touchUpInside)
     }
     
     private func configureHierarchy() {

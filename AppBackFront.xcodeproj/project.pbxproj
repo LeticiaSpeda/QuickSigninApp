@@ -40,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E038FEC62AD04A13004036F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0E015CC2889DFBB008AE19E /* LoginScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E0E015A82889DB30008AE19E = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +69,8 @@
 		E0E015B32889DB30008AE19E /* AppBackFront */ = {
 			isa = PBXGroup;
 			children = (
+				E038FEC62AD04A13004036F2 /* View */,
 				E0E015CA2889DDB2008AE19E /* LoginViewController.swift */,
-				E0E015CC2889DFBB008AE19E /* LoginScreen.swift */,
 				E0E015C22889DB31008AE19E /* Info.plist */,
 				E0E015D0288A1C3B008AE19E /* Extension */,
 			);

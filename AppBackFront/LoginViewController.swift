@@ -1,27 +1,41 @@
-//
-//  LoginViewController.swift
-//  AppBackFront
-//
-//  Created by Leticia Speda on 21/07/22.
-//
-
 import UIKit
 
 final class LoginViewController: UIViewController {
-    
-    var screen: LoginScreen?
-    
+    var loginScreen: LoginScreen?
     
     override func loadView() {
-        self.screen = LoginScreen()
-        view = screen
+        self.loginScreen = LoginScreen()
+        view = loginScreen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        loginScreen?.delegate(self)
+        loginScreen?.configTextFieldDelegate(self)
     }
     
+}
+
+extension LoginViewController: LoginScreenProtocol {
+    func tappedLoginButton() {
+        //
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print(#function)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print(#function)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function)
+        textField.resignFirstResponder()
+        return false
+    }
     
 }

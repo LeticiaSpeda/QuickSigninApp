@@ -1,12 +1,5 @@
-//
-//  ColorGradient.swift
-//  AppBackFront
-//
-//  Created by Leticia Speda on 21/07/22.
-//
 import UIKit
-
-    
+   
 extension UIView {
     
     func grandientBackground(colorOne: UIColor, colorTwo: UIColor){
@@ -20,6 +13,4 @@ extension UIView {
         
         layer.addSublayer(gradientLayer)
     }
-    
-    
 }

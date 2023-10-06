@@ -14,10 +14,10 @@
 		E0E015CD2889DFBB008AE19E /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E015CC2889DFBB008AE19E /* LoginScreen.swift */; };
 		E0E015CF288A1C2B008AE19E /* ColorGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E015CE288A1C2B008AE19E /* ColorGradientExtension.swift */; };
 		E0E015D2288A2B52008AE19E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E015D1288A2B52008AE19E /* Colors.swift */; };
-		E0E015D6288A3A0D008AE19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E015D5288A3A0D008AE19E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E038FEC52ACF4E7E004036F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0E015B12889DB30008AE19E /* AppBackFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppBackFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E015B42889DB30008AE19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E015B62889DB30008AE19E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +27,6 @@
 		E0E015CC2889DFBB008AE19E /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		E0E015CE288A1C2B008AE19E /* ColorGradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGradientExtension.swift; sourceTree = "<group>"; };
 		E0E015D1288A2B52008AE19E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		E0E015D5288A3A0D008AE19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +82,7 @@
 		E0E015C92889DD63008AE19E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				E0E015D5288A3A0D008AE19E /* Assets.xcassets */,
+				E038FEC52ACF4E7E004036F2 /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -155,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0E015D6288A3A0D008AE19E /* Assets.xcassets in Resources */,
 				E0E015C12889DB31008AE19E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

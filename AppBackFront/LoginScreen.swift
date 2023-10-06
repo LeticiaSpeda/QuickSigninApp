@@ -7,8 +7,7 @@
 
 import UIKit
 
-class LoginScreen: UIView {
-
+final class LoginScreen: UIView {
     
     //MARK: - Componets
     private lazy var subImageView: UIImageView = {
@@ -17,7 +16,6 @@ class LoginScreen: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-
     
     private lazy var logoApp: UIImageView = {
         let image = UIImageView()
@@ -28,7 +26,7 @@ class LoginScreen: UIView {
         return image
     }()
     
-    private lazy var appLabel: UILabel = {
+    private lazy var nameAppLabel: UILabel = {
         let label = UILabel()
         label.text = "BackFront Academy"
         label.textColor = .white
@@ -49,48 +47,55 @@ class LoginScreen: UIView {
     
     
     private lazy var loginTextField: UITextField = {
-        let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Login",attributes:
-        [NSAttributedString.Key.foregroundColor:
-         UIColor.white.withAlphaComponent(1.0)])
-        tf.textColor = UIColor.white
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.white.cgColor
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 12
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .emailAddress
-        tf.autocorrectionType = .no
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.backgroundColor = UIColor(red: 40/255,
-                                     green: 40/255,
-                                     blue: 40/255,
-                                     alpha: 0.7)
-        return tf
+        let textField = UITextField()
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Login",
+            attributes:[
+                NSAttributedString.Key.foregroundColor: UIColor.white.withAlphaComponent(1.0)
+            ]
+        )
+        textField.textColor = UIColor.white
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.white.cgColor
+        textField.clipsToBounds = true
+        textField.layer.cornerRadius = 12
+        textField.borderStyle = .roundedRect
+        textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = UIColor(
+            red: 40/255,
+            green: 40/255,
+            blue: 40/255,
+            alpha: 0.7
+        )
+        return textField
     }()
     
     private lazy var passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.attributedPlaceholder = NSAttributedString(string: "Password",attributes:
-        [NSAttributedString.Key.foregroundColor:
-         UIColor.white.withAlphaComponent(1.0)])
-        tf.textColor = UIColor.white
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.white.cgColor
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 12
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .emailAddress
-        tf.autocorrectionType = .no
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.backgroundColor = UIColor(red: 40/255,
-                                     green: 40/255,
-                                     blue: 40/255,
-                                     alpha: 0.7)
-        
-        return tf
+        let textField = UITextField()
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "Password",
+            attributes: [
+                NSAttributedString.Key.foregroundColor:UIColor.white.withAlphaComponent(1.0)
+            ])
+        textField.textColor = UIColor.white
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.white.cgColor
+        textField.clipsToBounds = true
+        textField.layer.cornerRadius = 12
+        textField.borderStyle = .roundedRect
+        textField.keyboardType = .emailAddress
+        textField.autocorrectionType = .no
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = UIColor(
+            red: 40/255,
+            green: 40/255,
+            blue: 40/255,
+            alpha: 0.7
+        )
+        return textField
     }()
-    
     
     private lazy var recoverPasswordButton: UIButton = {
         let button = UIButton(type: .system)
@@ -111,7 +116,7 @@ class LoginScreen: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-
+    
     private lazy var sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("Enviar", for: .normal)
@@ -124,10 +129,8 @@ class LoginScreen: UIView {
                                          blue: 123.0/255.0, alpha: 0.50)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.white.cgColor
-        
         return button
     }()
-    
     
     private lazy var dividendorView: UIView = {
         let view = UIView()
@@ -141,7 +144,12 @@ class LoginScreen: UIView {
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
         view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor(red: 255/255, green: 0/255, blue: 192/255, alpha: 1.0).cgColor
+        view.layer.borderColor = UIColor(
+            red: 255/255,
+            green: 0/255,
+            blue: 192/255,
+            alpha: 1.0
+        ).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -163,7 +171,6 @@ class LoginScreen: UIView {
         return label
     }()
     
-    
     //MARK: - Construtor
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -175,15 +182,15 @@ class LoginScreen: UIView {
     }
     
     //MARK: - Helpers
-    
     private func commonInit() {
         configureHierarchy()
         configureConstrainsts()
     }
+    
     private func configureHierarchy() {
         addSubview(subImageView)
         addSubview(logoApp)
-        addSubview(appLabel)
+        addSubview(nameAppLabel)
         addSubview(descriptionApp)
         addSubview(loginTextField)
         addSubview(passwordTextField)
@@ -203,38 +210,59 @@ class LoginScreen: UIView {
             subImageView.topAnchor.constraint(equalTo: topAnchor),
             subImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            logoApp.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                         constant: 55),
+            logoApp.topAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.topAnchor,
+                constant: 55
+            ),
             logoApp.heightAnchor.constraint(equalToConstant: 108),
             logoApp.widthAnchor.constraint(equalToConstant: 108),
             logoApp.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            appLabel.topAnchor.constraint(equalTo: logoApp.bottomAnchor,
-                                          constant: 20),
-            appLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nameAppLabel.topAnchor.constraint(equalTo: logoApp.bottomAnchor,
+                                              constant: 20),
+            nameAppLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            descriptionApp.topAnchor.constraint(equalTo: appLabel.bottomAnchor,
-                                                constant: 10),
-            descriptionApp.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                    constant: 10),
-            descriptionApp.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                     constant: -10),
+            descriptionApp.topAnchor.constraint(
+                equalTo: nameAppLabel.bottomAnchor,
+                constant: 10
+            ),
+            descriptionApp.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: 10
+            ),
+            descriptionApp.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -10
+            ),
             
-            loginTextField.topAnchor.constraint(equalTo: descriptionApp.bottomAnchor,
-                                                constant: 32),
-            loginTextField.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                    constant: 20),
-            loginTextField.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                     constant: -20),
+            loginTextField.topAnchor.constraint(
+                equalTo: descriptionApp.bottomAnchor,
+                constant: 32
+            ),
+            loginTextField.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: 20
+            ),
+            loginTextField.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -20
+            ),
             
-            passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor,
-                                                constant: 11),
-            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,
-                                                    constant: 20),
+            passwordTextField.topAnchor.constraint(
+                equalTo: loginTextField.bottomAnchor,
+                constant: 11
+            ),
+            passwordTextField.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: 20
+            ),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                     constant: -20),
+                                                        constant: -20),
             
-            recoverPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 14),
+            recoverPasswordButton.topAnchor.constraint(
+                equalTo: passwordTextField.bottomAnchor,
+                constant: 14
+            ),
             recoverPasswordButton.trailingAnchor.constraint(equalTo: loginTextField.trailingAnchor),
             recoverPasswordButton.heightAnchor.constraint(equalToConstant: 16),
             
@@ -249,12 +277,24 @@ class LoginScreen: UIView {
             subLoginview.topAnchor.constraint(equalTo: sendButton.topAnchor),
             subLoginview.bottomAnchor.constraint(equalTo: sendButton.bottomAnchor),
             
-            dividendorView.topAnchor.constraint(equalTo: sendButton.bottomAnchor, constant: 48),
-            dividendorView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 64),
-            dividendorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -64),
+            dividendorView.topAnchor.constraint(
+                equalTo: sendButton.bottomAnchor,
+                constant: 48
+            ),
+            dividendorView.leadingAnchor.constraint(
+                equalTo: leadingAnchor,
+                constant: 64
+            ),
+            dividendorView.trailingAnchor.constraint(
+                equalTo: trailingAnchor,
+                constant: -64
+            ),
             dividendorView.heightAnchor.constraint(equalToConstant: 1.0),
             
-            signInMetamaskView.topAnchor.constraint(equalTo: dividendorView.bottomAnchor, constant: 48),
+            signInMetamaskView.topAnchor.constraint(
+                equalTo: dividendorView.bottomAnchor,
+                constant: 48
+            ),
             signInMetamaskView.leadingAnchor.constraint(equalTo: sendButton.leadingAnchor),
             signInMetamaskView.trailingAnchor.constraint(equalTo: sendButton.trailingAnchor),
             signInMetamaskView.heightAnchor.constraint(equalToConstant: 41),
@@ -268,8 +308,4 @@ class LoginScreen: UIView {
             signInMetamaskLabel.centerYAnchor.constraint(equalTo: signInMetamaskView.centerYAnchor)
         ])
     }
-    
-    
-    
 }
-

@@ -1,13 +1,6 @@
-//
-//  Colors.swift
-//  AppBackFront
-//
-//  Created by Leticia Speda on 21/07/22.
-//
-
 import UIKit
 
-struct colors {
+struct Colors {
     static let flickrPink = UIColor(
         red: 242.0/255.0, green: 19.0/255.0,
         blue: 123.0/255.0, alpha: 0.25)

@@ -44,7 +44,7 @@ final class LoginScreen: UIView {
     }()
     
     
-    private lazy var loginTextField: UITextField = {
+    private(set) lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Login",
@@ -70,7 +70,7 @@ final class LoginScreen: UIView {
         return textField
     }()
     
-    private lazy var passwordTextField: UITextField = {
+    private(set) lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.attributedPlaceholder = NSAttributedString(
             string: "Password",
@@ -115,7 +115,7 @@ final class LoginScreen: UIView {
         return image
     }()
     
-    private lazy var sendButton: UIButton = {
+    private(set) lazy var sendButton: UIButton = {
         let button = UIButton()
         button.setTitle("Logar", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
@@ -123,9 +123,9 @@ final class LoginScreen: UIView {
         button.layer.cornerRadius = 10
         button.titleLabel?.textAlignment = .center
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(red: 242.0/255.0, green: 19.0/255.0,
-                                         blue: 123.0/255.0, alpha: 0.50)
+        button.backgroundColor = .gray
         button.layer.borderWidth = 1.0
+        button.isEnabled = false
         button.layer.borderColor = UIColor.white.cgColor
         return button
     }()
@@ -325,3 +325,4 @@ final class LoginScreen: UIView {
         ])
     }
 }
+

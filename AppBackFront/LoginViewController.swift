@@ -13,7 +13,6 @@ final class LoginViewController: UIViewController {
         loginScreen?.delegate(self)
         loginScreen?.configTextFieldDelegate(self)
     }
-    
 }
 
 extension LoginViewController: LoginScreenProtocol {
@@ -29,7 +28,16 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(#function)
+        let email = loginScreen?.loginTextField.text ?? ""
+        let password = loginScreen?.passwordTextField.text ?? ""
+        
+        if email.isEmpty && password.isEmpty {
+            loginScreen?.sendButton.isEnabled = true
+            loginScreen?.sendButton.backgroundColor = .gray
+        } else {
+            loginScreen?.sendButton.isEnabled = false
+            loginScreen?.sendButton.backgroundColor = UIColor(red: 242.0/255.0, green: 19.0/255.0, blue: 123.0/255.0, alpha: 0.50)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

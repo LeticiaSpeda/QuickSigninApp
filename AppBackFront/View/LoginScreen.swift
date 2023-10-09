@@ -16,12 +16,12 @@ final class LoginScreen: UIView {
     }()
     
     private lazy var logoApp: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "Logo")
-        image.clipsToBounds = true
-        image.layer.cornerRadius = 20
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
+        let image = UIImage(named: "logo")
+        let imageView = UIImageView(image: image)
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 20
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private lazy var nameAppLabel: UILabel = {
@@ -174,7 +174,7 @@ final class LoginScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        backgroundColor = #colorLiteral(red: 0.5710227273, green: 0.06407853923, blue: 0.4594097599, alpha: 0.98)
+//        backgroundColor = #colorLiteral(red: 0.5710227273, green: 0.06407853923, blue: 0.4594097599, alpha: 0.98)
     }
     
     required init?(coder: NSCoder) {
@@ -328,3 +328,14 @@ final class LoginScreen: UIView {
     }
 }
 
+extension HomeViewController: HomeScreenProtocol {
+    func tappedOneButton() {
+        NotificationCenter.default.post(name: Notification.Name("One"), object: UIColor.orange)
+        dismiss(animated: true)
+    }
+    
+    func tappedTwoButton() {
+        NotificationCenter.default.post(name: Notification.Name("Two"), object: UIColor.yellow)
+        dismiss(animated: true)
+    }
+}

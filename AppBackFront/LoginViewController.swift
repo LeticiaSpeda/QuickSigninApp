@@ -4,7 +4,7 @@ final class LoginViewController: UIViewController {
     var loginScreen: LoginScreen?
     
     override func loadView() {
-        self.loginScreen = LoginScreen()
+        loginScreen = LoginScreen()
         view = loginScreen
     }
     
@@ -18,7 +18,7 @@ final class LoginViewController: UIViewController {
 extension LoginViewController: LoginScreenProtocol {
     func tappedLoginButton() {
         let controller = HomeViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        present(controller, animated: true)
     }
 }
 
